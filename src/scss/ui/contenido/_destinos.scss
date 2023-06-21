@@ -1,0 +1,57 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.destinos{
+    
+    &__grid{
+        @include m.grid(1, 2rem);
+
+        @include m.tablet { 
+            @include m.grid(2, 2rem); 
+        }
+        @include m.desktop { 
+            @include m.grid(4, 2rem); 
+        }
+    }
+
+    
+}
+
+
+.destino{
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    
+
+    &__imagen{
+        width: 14rem;
+        height: 14rem;
+        line-height: 0.9;
+        
+    }
+    &__nombre{
+        font-weight: 900;
+        margin: 0;
+    }
+    &__distancia{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+
+    &:hover{
+        
+        border-radius: 1.5rem;
+        background-color: v.$secundario;
+        
+        h3,p{
+            color: v.$blanco;
+        }
+    }
+
+    
+}

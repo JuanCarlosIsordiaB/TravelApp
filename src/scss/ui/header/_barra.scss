@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.barra{
+    display: none; //Oculta la barra en modo telefono
+    margin-top: -37rem;
+
+    @include m.tablet { 
+        display: flex; 
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__navegacion{
+        @include m.tablet { 
+            display: flex;
+            gap: 4rem; 
+        }
+        
+    }
+    &__link,
+    &__nombre,
+    &__login{
+        color: v.$blanco;
+        
+    }
+
+    &__nombre{
+        margin: 0;
+        
+    }
+    
+}

@@ -1,0 +1,46 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header{
+    background-image: url(../img/fondo-header.jpg);
+    background-size: cover;
+    background-position: center;
+    @include m.desktop { 
+        padding-bottom: 35rem;
+    }
+    
+    
+
+    &__wave{
+        padding-top: 0;
+    }
+    
+    &__busqueda{
+        margin-top: 4rem;
+        text-align: center;
+        @include m.tablet { 
+            margin-top: 30rem;
+        }
+    }
+
+    &__busqueda-label{
+        font-size: 3rem;
+        font-weight: 900;
+
+        @include m.desktop { 
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__busqueda-boton{
+        
+        @include m.boton(v.$primario,v.$blanco );
+
+        
+        &:hover{
+            @include m.boton(v.$blanco, v.$primario); 
+            transition: 500ms;
+        }
+
+    }
+}
